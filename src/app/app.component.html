@@ -1,9 +1,42 @@
-<!--The content below is only a placeholder and can be replaced.-->
 <div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+    <h1>
+        Welcome to {{ title }}!
+      </h1>
 
-  <h3>Hello Nate!!!</h3>
+  <div class="nav">
+
+  </div>
+
+  <div class="list">
+    <table matSort (matSortChange)="sortData($event)">
+      <tr>
+        <th mat-sort-header="description">Description</th>
+        <th mat-sort-header="quantity">Quantity</th>
+        <th mat-sort-header="unitPrice">Unit Price</th>
+        <th mat-sort-header="subtotal">Subtotal</th>
+        <th mat-sort-header="discount">Discount</th>
+        <th mat-sort-header="total">Total</th>
+      </tr>
+    
+      <tr *ngFor="let header of sortedData">
+        <td>{{header.description}}</td>
+        <td>{{header.quantity}}</td>
+        <td>{{header.unitPrice}}</td>
+        <td>{{header.subtotal}}</td>
+        <td>{{header.discount}}</td>
+        <td>{{header.total}}</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="pay">
+
+  </div>
+  <div class="items">
+
+  </div>
+  
+
+</div>
 
 <router-outlet></router-outlet>
